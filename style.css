@@ -13,16 +13,19 @@ html, body{
 
 nav{
     position: fixed;
-    /* background-color: red; */
     display: flex;
-    align-items: center;
+    align-items: baseline;
     width: 100%;
-    padding: 1.5vw 8vw;
+    height: 13vh;
+    padding: 2vw 7vw;
+    padding-bottom: 5vw;
     justify-content: space-between;
     text-transform: uppercase;
+    background-color: #111;
+    z-index: 10;
 }
 
-#navlinks{
+/* #navlinks{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -33,31 +36,58 @@ nav{
     font-size: 0.9vw;
     font-weight: 900;
     text-transform: uppercase;
+} */
+
+nav h1{
+    font-size: 1.6vw;
 }
 
-nav:hover #expand{
+/* nav:hover #expand{
     height: 150%;
     bottom: -150%;
     background-color: #111;
-}
+} */
 
 #expand{
-    position: absolute;
-    height: 0%;
-    width: 84%;
-    bottom: 0;
-    border-bottom: 1.5px solid #dadada;
-    transition: all ease 0.5s;
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
-    /* gap: 2vw; */
-    padding-top: 1vw;
-    padding-bottom: 3vw;
-    padding-left: 17vw;
-    padding-right: 16vw;
+    padding: 1vh 0;
+    gap: 2vw;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
 }
 
+#expand h4{
+    font-size: 0.85vw;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 2.6vw;
+}
+
+#expand h5 span{
+    font-size: 0.8vw;
+    font-weight: 500;
+    display: inline-block;
+    transform: translateY(25px);
+}
+
+#expand h5{
+    margin-bottom: 1vw;
+    display: none;
+    overflow: hidden;
+}
+
+#nav-line{
+    width: 86%;
+    height: 21vh;
+    position: absolute;
+    top: 100%;
+    border-bottom: 1px solid #dadada;
+    background-color: #111;
+    height: 0;
+    /* z-index: 9; */
+}
 
 nav button{
     background-color: #0DA34E;
@@ -133,7 +163,53 @@ nav button svg{
     padding: 5px;
 }
 
+#moving-div{
+    position: absolute;
+    bottom: 2%;
+    width: 48%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 1.2vw;
+}
 
+#moving-div .move{
+    display: inline-block;
+    animation: doit 10s linear infinite;
+}
+
+#moving-div .move img{
+    height: 1.3vw;
+    margin: 0 1vw;
+}
+
+@keyframes doit{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+#lblur{
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: linear-gradient(to right, #111, transparent);
+}
+
+#rblur{
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    background: linear-gradient(to right, transparent, #111);
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
 
 
 
