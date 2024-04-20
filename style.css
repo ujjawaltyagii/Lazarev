@@ -292,3 +292,74 @@ nav button svg{
     scale: 0;
     z-index: 0;
 }
+
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+    background-image: url(https://lazarev.kiev.ua/la24/reel-cover.webp);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page3 h5{
+    font-size: 0.8vw;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    font-weight: 900;
+    margin-top: 0.7vw;
+    letter-spacing: 0.7px;
+    opacity: 0;
+    transform: translateY(-10%);
+    transition: all ease 0.5s;
+}
+
+#p3center:hover h5{
+    opacity: 1;
+    transform: translateY(10%);
+    cursor: pointer;
+}
+
+#p3center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#p3center:hover{
+    cursor: pointer;
+}
+
+#p3icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.6vw;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#p3icon i{
+    font-size: 2.7vw;
+    color: #111;
+}
+
+#page3 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    transform: scaleX(0.7) scaleY(0);
+    border-radius: 30px;
+    opacity: 0;
+    z-index: 999;
+}
+
+

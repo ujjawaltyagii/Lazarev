@@ -37,7 +37,7 @@ function navbarAnimation() {
     })
 }
 
-// navbarAnimation();
+navbarAnimation();
 
 function bubbleAnimation(){
     var rp = document.querySelectorAll(".rparts");
@@ -70,3 +70,28 @@ function bubbleAnimation(){
 }
 
 bubbleAnimation();
+
+function videoAnimation(){
+    var p3cnt = document.querySelector("#p3center");
+    var vid = document.querySelector("#page3 video");
+
+    p3cnt.addEventListener("click", function(){
+        vid.play()
+        gsap.to(vid,{
+            transform: "scale(1)",
+            opacity: 1,
+            borderRadius: 0
+        })
+    })
+
+    vid.addEventListener("click", function(){
+        vid.pause()
+        gsap.to(vid,{
+            transform: "scale(0)",
+            opacity: 0,
+            borderRadius: "30px"
+        })
+    })
+}
+
+videoAnimation();
