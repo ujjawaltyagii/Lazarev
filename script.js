@@ -37,4 +37,36 @@ function navbarAnimation() {
     })
 }
 
-navbarAnimation();
+// navbarAnimation();
+
+function bubbleAnimation(){
+    var rp = document.querySelectorAll(".rparts");
+
+    rp.forEach(function(elem){
+        elem.addEventListener("mouseenter",function(){
+            // elem.childNodes[3].style.opacity = 1;
+            gsap.to(elem.childNodes[3],{
+                opacity: 1,
+                scale: 1,
+                zindex: 0
+            })
+        })
+        elem.addEventListener("mouseleave",function(){
+            // elem.childNodes[3].style.opacity = 0;
+            gsap.to(elem.childNodes[3],{
+                opacity: 0,
+                scale: 0,
+                zindex: 0
+            })
+        })
+        elem.addEventListener("mousemove", function(det){
+            // console.log(det);
+            gsap.to(elem.childNodes[3],{
+                x: det.x - elem.getBoundingClientRect().x-50,
+                y: det.y - elem.getBoundingClientRect().y-120
+            })
+        })
+    })
+}
+
+bubbleAnimation();
